@@ -12,8 +12,8 @@ clc;
 %  STEP 1:Set parameters 
 % ---------------------------------------------------------
 
-lambda       = 10;   % average 10 patients arrive per hour
-sim_duration = 8;    % 8 hour shift
+lambda       = 10/60;   % average 10 patients/hour
+sim_duration = 480;    % 8 hour shift
 
 % ---------------------------------------------------------
 %  STEP 2:Generate patient arrival times
@@ -58,19 +58,19 @@ end
 fprintf('==========================================\n');
 fprintf('        PATIENT ARRIVAL RESULTS\n');
 fprintf('==========================================\n');
-fprintf('Arrival rate (lambda)  : %d patients/hour\n', lambda);
-fprintf('Simulation duration    : %d hours\n', sim_duration);
+fprintf('Arrival rate (lambda)  : %.4f patients/minute\n', lambda);
+fprintf('Simulation duration    : %d minutes\n', sim_duration);
 fprintf('Total patients arrived : %d\n', num_patients);
-fprintf('Expected patients      : %d\n', lambda * sim_duration);
-fprintf('First patient arrived  : %.6f hours\n', arrival_times(1));
-fprintf('Last  patient arrived  : %.6f hours\n', arrival_times(end));
+fprintf('Expected patients      : %d\n', round(lambda * sim_duration));
+fprintf('First patient arrived  : %.4f minutes\n', arrival_times(1));
+fprintf('Last  patient arrived  : %.4f minutes\n', arrival_times(end));
 fprintf('\n');
 
 fprintf('------------------------------------------\n');
-fprintf('  Patient ID  |  Arrival Time (hours)\n');
+fprintf('  Patient ID  |  Arrival Time (minutes)\n');
 fprintf('------------------------------------------\n');
 for i = 1:num_patients
-  fprintf('     %3d      |      %.6f\n', patient_table(i,1), patient_table(i,2));
+  fprintf('     %3d      |      %.4f\n', patient_table(i,1), patient_table(i,2));
 end
 fprintf('------------------------------------------\n');
 
@@ -91,7 +91,7 @@ hold on;
 t = linspace(0, sim_duration, 100);
 plot(t, lambda * t, 'r--', 'LineWidth', 1.5);
 hold off;
-xlabel('Time (hours)');
+xlabel('Time (minutes)');
 ylabel('Number of patients arrived');
 title('Patient Arrival Pattern');
 legend('Simulated arrivals', 'Expected average');
