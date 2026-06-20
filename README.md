@@ -1,4 +1,3 @@
-# hospital-ed-queue-simulation
 # Hospital Emergency Department Queuing System Simulation
 
 ## CMA6134 – Simulation and Modelling Assignment
