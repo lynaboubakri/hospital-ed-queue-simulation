@@ -5,9 +5,6 @@
 % Baseline + Improvement
 %==================================================
 
-clear all;
-clc;
-close all;
 
 fprintf('=============================================\n');
 fprintf(' HOSPITAL EMERGENCY DEPARTMENT SIMULATION\n');
