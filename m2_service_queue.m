@@ -5,8 +5,6 @@
 %  CIT6114 Group Assignment
 % =========================================================
 
- clear all; %Clear old data in memory
- clc; %Clear screen
     
     %1. Load member 1's data
     load('m1_output.mat'); 
