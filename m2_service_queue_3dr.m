@@ -53,6 +53,6 @@ fprintf('Max Waiting Time Recorded: %.2f minutes\n', max(waiting_times));
 save('m2_output.mat', 'arrival_times', 'num_patients', 'service_times', ...
      'service_start_times', 'service_end_times', 'waiting_times', 'assigned_dr');
 
-fprintf('\n>> Improvement data saved in m2_output.mat for Member 3.\n');
+fprintf('\n>> Improvement data saved in m2_output.mat.\n');
     
 
