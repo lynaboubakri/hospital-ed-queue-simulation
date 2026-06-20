@@ -14,17 +14,16 @@ fprintf('=============================================\n');
 
 % Step 1: Run Member 1 module
 fprintf('Running Member 1: Patient Arrival Generator...\n');
-run('m1_arrivals.m);
+m1_arrivals;
 
 % Step 2: Run Member 2 module
 fprintf('\nRunning Member 2: Service and Queue System...\n');
-run('m2_service_queue.m);
+m2_service_queue;
 
 % Step 3: Run Member 3 module
 fprint('\nRunning Member 3: Performance Metrics...\n');
-run('m3_metrics.m);
+m3_metrics.m;
 
 fprintf('\n=============================================\n');
 fprintf(' SIMULATION COMPLETED SUCCESSFULLY\n');
 fprintf('=============================================\n');
-
