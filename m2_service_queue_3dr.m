@@ -1,6 +1,3 @@
-clear all;
-clc;
-
 %1. Load Member 1's data
 load('m1_output.mat');
 
