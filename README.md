@@ -72,7 +72,7 @@ The simulation computes the following performance metrics:
 
 Running `m4_main` will:
 
-* Display the simulation results in the Command Window.
+* Display the simulation results.
 * Generate:
 
   * Waiting Time Distribution graph
