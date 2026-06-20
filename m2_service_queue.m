@@ -1,3 +1,10 @@
+% =========================================================
+%  m2_service_queue.m
+%  Member 2 - Patient Arrival Generator
+%  Hospital Emergency Department Simulation
+%  CIT6114 Group Assignment
+% =========================================================
+
  clear all; %Clear old data in memory
  clc; %Clear screen
     
