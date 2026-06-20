@@ -26,7 +26,7 @@
     waiting_times       = zeros(1, num_patients); 
     assigned_dr         = zeros(1, num_patients);
     
-    dr_free_time        = [0,0]; %Array for 2 dr
+    dr_free_time        = [0,0]; %Array for 2 doctor
 
     %5. Doctor distribution and waiting time
         for i = 1:num_patients 
