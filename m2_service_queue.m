@@ -1,6 +1,6 @@
 % =========================================================
 %  m2_service_queue.m
-%  Member 2 - Patient Arrival Generator
+%  Member 2 - Service & Queue System
 %  Hospital Emergency Department Simulation
 %  CIT6114 Group Assignment
 % =========================================================
