@@ -14,18 +14,18 @@ fprintf(' HOSPITAL EMERGENCY DEPARTMENT SIMULATION\n');
 fprintf(' BASELINE VS IMPROVEMENT\n');
 fprintf('=============================================\n\n');
 
-% BASELINE: 2 DOCTORS
+%BASELINE: 2 DOCTORS
 fprintf('\n=============================================\n');
 fprintf(' BASELINE SIMULATION: 2 DOCTORS\n');
 fprintf('=============================================\n');
 
-fprintf('Running Member 1: Patient Arrival Generator...\n');
+fprintf('Running Member 1\n');
 m1_arrivals;
 
-fprintf('\nRunning Member 2: Service and Queue System...\n');
+fprintf('\nRunning Member 2\n');
 m2_service_queue;
 
-fprintf('\nRunning Member 3: Performance Metrics...\n');
+fprintf('\nRunning Member 3\n');
 m3_metrics;
 
 baseline_avg_wait = avg_wait;
@@ -37,7 +37,7 @@ baseline_avg_util = (util1 + util2)/2;
 
 save('baseline_results.mat', 'baseline_avg_wait', 'baseline_avg_queue', 'baseline_total_patients', 'baseline_util1', 'baseline_util2', 'baseline_avg_util');
 
-% IMPROVEMENT: 3 DOCTORS
+%IMPROVEMENT: 3 DOCTORS
 fprintf('\n=============================================\n');
 fprintf(' IMPROVEMENT SIMULATION: 3 DOCTORS\n');
 fprintf('=============================================\n');
@@ -64,7 +64,7 @@ save('improved_results.mat', 'improved_avg_wait', 'improved_avg_queue', 'improve
 load('baseline_results.mat');
 load('improved_results.mat');
 
-% COMPARISON TABLE
+%COMPARISON TABLE
 fprintf('\n=============================================\n');
 fprintf(' PERFORMANCE COMPARISON TABLE\n');
 fprintf('=============================================\n');
