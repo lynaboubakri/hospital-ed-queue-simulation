@@ -34,32 +34,45 @@ baseline_avg_util = (util1 + util2)/2;
 
 save('baseline_results.mat', 'baseline_avg_wait', 'baseline_avg_queue', 'baseline_total_patients', 'baseline_util1', 'baseline_util2', 'baseline_avg_util');
 
+figure(1); title('Waiting Time Distribution (Baseline - 2 Dr)');
+figure(2); title('Queue Length Over Time (Baseline - 2 Dr)');
+
 %IMPROVEMENT: 3 DOCTORS
 fprintf('\n=============================================\n');
 fprintf(' IMPROVEMENT SIMULATION: 3 DOCTORS\n');
 fprintf('=============================================\n');
 
-fprintf('Running Member 1: Patient Arrival Generator...\n');
-m1_arrivals;
-
 fprintf('\nRunning Improvement Service and Queue System...\n');
-m2_service_queue_3dr;
+m4_service_queue_3dr;
 
-fprintf('\nRunning Member 3: Performance Metrics...\n');
-m3_metrics;
+load('m4_output_improved.mat');
 
-improved_avg_wait = avg_wait;
-improved_avg_queue = avg_queue;
-improved_total_patients = total_patients;
-improved_util1 = sum(service_times(assigned_dr == 1)) / max(service_end_times) * 100;
-improved_util2 = sum(service_times(assigned_dr == 2)) / max(service_end_times) * 100;
-improved_util3 = sum(service_times(assigned_dr == 3)) / max(service_end_times) * 100;
-improved_avg_util = (improved_util1 + improved_util2 + improved_util3) / 3;
+queue_length_imp = zeros(1, num_patients);
+for i = 1:num_patients
+    current_time = arrival_times(i);
+    arrived = sum(arrival_times <= current_time);
+    started = sum(service_start_times <= current_time);
+    queue_length_imp(i) = arrived - started;
+end
+
+improved_avg_wait = mean(waiting_times);
+improved_avg_queue = mean(queue_length_imp);
+improved_total_patients = num_patients;
+total_time_imp = max(service_end_times);
+imp_util1 = sum(service_times(assigned_dr == 1)) / total_time_imp * 100;
+imp_util2 = sum(service_times(assigned_dr == 2)) / total_time_imp * 100;
+imp_util3 = sum(service_times(assigned_dr == 3)) / total_time_imp * 100;
+improved_avg_util = (imp_util1 + imp_util2 + imp_util3) / 3;
 
 save('improved_results.mat', 'improved_avg_wait', 'improved_avg_queue', 'improved_total_patients', 'improved_util1', 'improved_util2', 'improved_util3', 'improved_avg_util');
 
-load('baseline_results.mat');
-load('improved_results.mat');
+figure(3); hist(waiting_times); grid on;
+xlabel('Waiting Time (minutes)'); ylabel('Number of Patients');
+title('Waiting Time Distribution (Improved - 3 Dr)');
+
+figure(4); plot(arrival_times, queue_length_imp, 'r-', 'LineWidth', 2); grid on;
+xlabel('Time (minutes)'); ylabel('Queue Length');
+title('Queue Length Over Time (Improved - 3 Dr)');
 
 %COMPARISON TABLE
 fprintf('\n=============================================\n');
