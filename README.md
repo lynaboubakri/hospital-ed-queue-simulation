@@ -94,6 +94,9 @@ Running `m4_main` will:
 CAM6134 Group Assignment
 
 Member 1 – Patient Arrival Generator
+
 Member 2 – Service & Queue System
+
 Member 3 – Performance Metrics
+
 Member 4 – Main Simulation Controller, Improvement Scenario, Results Comparison, and README
