@@ -26,8 +26,8 @@ m4_main
 
    * Generate patient arrivals.
    * Run the baseline simulation (2 doctors).
+   * Calculate baseline performance metrics
    * Run the improvement simulation (3 doctors).
-   * Calculate performance metrics.
    * Display a comparison table.
    * Save the simulation results.
 
@@ -40,8 +40,9 @@ m4_main
 | `m1_arrivals.m`          | Generates patient arrival times.                                                                          |
 | `m2_service_queue.m`     | Simulates the baseline system with 2 doctors.                                                             |
 | `m3_metrics.m`           | Calculates average waiting time, queue length, doctor utilization, and total patients served.             |
-| `m4_main.m`              | Main controller that executes the complete simulation, stores results, and displays the comparison table. |
 | `m4_service_queue_3dr.m` | Simulates the improved system with 3 doctors.                                                             |
+| `m4_main.m`              | Main controller that executes the complete simulation, stores results, and displays the comparison table. |
+
 
 ---
 
@@ -61,9 +62,9 @@ m4_main
 
 The simulation computes the following performance metrics:
 
-* Average Waiting Time
-* Average Queue Length
-* Doctor Utilization
+* Average Waiting Time (minutes)
+* Average Queue Length (patients)
+* Doctor Utilization (%)
 * Total Patients Served
 
 ---
@@ -73,15 +74,18 @@ The simulation computes the following performance metrics:
 Running `m4_main` will:
 
 * Display the simulation results.
-* Generate:
-
-  * Waiting Time Distribution graph
-  * Queue Length Over Time graph
-* Display a comparison table between the baseline and improvement scenarios.
-* Automatically generate:
-
+* Generated Visualizations:
+  * Figure 1: Waiting Time Distribution Histogram (Baseline - 2 Dr)
+  * Figure 2: Queue Length Over Time Graph (Baseline - 2 Dr)
+  * Figure 3: Waiting Time Distribution Histogram (Improved - 3 Dr)
+  * Figure 4: Queue Length Over Time Graph (Improved - 3 Dr)
+* Saved Data Files (.mat):
+  * `m1_output.mat`
+  * `m2_output.mat`
+  * `m4_output_improved.mat`
   * `baseline_results.mat`
   * `improved_results.mat`
+* Display a comparison table between the baseline and improvement scenarios.
 
 ---
 
@@ -90,9 +94,6 @@ Running `m4_main` will:
 CAM6134 Group Assignment
 
 Member 1 – Patient Arrival Generator
-
 Member 2 – Service & Queue System
-
 Member 3 – Performance Metrics
-
 Member 4 – Main Simulation Controller, Improvement Scenario, Results Comparison, and README
