@@ -64,7 +64,7 @@ imp_util2 = sum(service_times(assigned_dr == 2)) / total_time_imp * 100;
 imp_util3 = sum(service_times(assigned_dr == 3)) / total_time_imp * 100;
 improved_avg_util = (imp_util1 + imp_util2 + imp_util3) / 3;
 
-save('improved_results.mat', 'improved_avg_wait', 'improved_avg_queue', 'improved_total_patients', 'improved_util1', 'improved_util2', 'improved_util3', 'improved_avg_util');
+save('improved_results.mat', 'improved_avg_wait', 'improved_avg_queue', 'improved_total_patients', 'imp_util1', 'imp_util2', 'imp_util3', 'improved_avg_util');
 
 figure(3); hist(waiting_times); grid on;
 xlabel('Waiting Time (minutes)'); ylabel('Number of Patients');
