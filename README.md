@@ -37,11 +37,12 @@ m4_main
 
 | File                     | Description                                                                                               |
 | ------------------------ | --------------------------------------------------------------------------------------------------------- |
-| `m1_arrivals.m`          | Generates patient arrival times.                                         |
+| `m1_arrivals.m`          | Generates patient arrival times.                                                                          |
 | `m2_service_queue.m`     | Simulates the baseline system with 2 doctors.                                                             |
-| `m2_service_queue_3dr.m` | Simulates the improved system with 3 doctors.                                                             |
 | `m3_metrics.m`           | Calculates average waiting time, queue length, doctor utilization, and total patients served.             |
 | `m4_main.m`              | Main controller that executes the complete simulation, stores results, and displays the comparison table. |
+| `m4_service_queue_3dr.m` | Simulates the improved system with 3 doctors. 
+                                   |
 
 ---
 
